@@ -22,11 +22,11 @@ export class ManageitemsComponent implements OnInit {
   menuVisible = true;
   showLogoutModal = false;
 
-  // Reactive form group for add/update item
   itemForm: FormGroup;
+  isAddingNewType: boolean = false;
+  newFoodType: string = '';
 
   constructor(private router: Router, private fb: FormBuilder) {
-    // Initialize form with validators
     this.itemForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(10)]],
@@ -39,17 +39,18 @@ export class ManageitemsComponent implements OnInit {
   ngOnInit(): void {
     this.token = localStorage.getItem('jwtToken');
     this.loadFoodItems();
-    this.loadFoodTypes();
   }
 
-  // Load all food items from the API
   async loadFoodItems() {
     try {
       const response = await axios.get('http://localhost:5270/api/fooditems', {
-        headers: { Authorization: `Bearer ${this.token}` }
+        headers: {
+          Authorization: `Bearer ${this.token}`
+        }
       });
       this.foodItems = response.data;
       this.filteredItems = this.foodItems;
+      this.extractFoodTypes();
     } catch (error) {
       console.error('Error loading food items', error);
       this.notification = { message: 'Failed to load food items', type: 'error' };
@@ -57,21 +58,37 @@ export class ManageitemsComponent implements OnInit {
     }
   }
 
-  // Load all food types (unique) from the API
-  async loadFoodTypes() {
-    try {
-      const response = await axios.get('http://localhost:5270/api/fooditems/foodtypes', {
-        headers: { Authorization: `Bearer ${this.token}` }
-      });
-      this.foodTypes = response.data;
-    } catch (error) {
-      console.error('Error loading food types', error);
-      this.notification = { message: 'Failed to load food types', type: 'error' };
-      this.showNotification();
+  extractFoodTypes() {
+    const types = new Set(this.foodItems.map(item => item.foodType));
+    this.foodTypes = Array.from(types);
+  }
+
+  onFoodTypeChange(event: any) {
+    const selectedValue = event.target.value;
+    if (selectedValue === 'new') {
+      this.isAddingNewType = true;
+      this.newFoodType = '';
+    } else {
+      this.isAddingNewType = false;
+      this.filterItemsByType(selectedValue);
     }
   }
 
-  // Filter the food items based on the selected food type
+  addFoodType() {
+    if (this.newFoodType && !this.foodTypes.includes(this.newFoodType)) {
+      this.foodTypes.push(this.newFoodType);
+      this.itemForm.patchValue({ foodType: this.newFoodType }); // Update the form with the new type
+      this.newFoodType = '';
+      this.isAddingNewType = false;
+    }
+  }
+
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.addFoodType();
+    }
+  }
+
   filterItemsByType(type: string | null) {
     this.selectedFoodType = type;
     this.filteredItems = type
@@ -79,11 +96,10 @@ export class ManageitemsComponent implements OnInit {
       : this.foodItems;
   }
 
-  // Toggle form visibility for adding/updating items
   toggleAddItemForm(editingItem: any = null) {
     this.showAddItemForm = !this.showAddItemForm;
     if (editingItem) {
-      this.editingItem = { ...editingItem }; // Clone to avoid direct mutation
+      this.editingItem = { ...editingItem }; // Clone to avoid mutations
       this.itemForm.patchValue({
         name: editingItem.name,
         description: editingItem.description,
@@ -96,7 +112,6 @@ export class ManageitemsComponent implements OnInit {
     }
   }
 
-  // Add or update a food item
   async addOrUpdateItem() {
     if (this.itemForm.invalid) {
       this.itemForm.markAllAsTouched();
@@ -109,61 +124,86 @@ export class ManageitemsComponent implements OnInit {
 
     try {
       if (this.editingItem) {
-        // Update the existing item
         formData.id = this.editingItem.id;
         const updateUrl = `http://localhost:5270/api/fooditems/${this.editingItem.id}`;
-        await axios.put(updateUrl, formData, {
-          headers: { Authorization: `Bearer ${this.token}` }
+        const response = await axios.put(updateUrl, formData, {
+          headers: {
+            Authorization: `Bearer ${this.token}`
+          }
         });
-        this.notification = { message: 'Item updated successfully', type: 'success' };
+
+        if (response.status === 200) {
+          this.notification = { message: 'Item updated successfully', type: 'success' };
+          this.loadFoodItems(); // Refresh list to show the updated item
+        } else {
+          this.notification = { message: `Error updating item: ${response.statusText}`, type: 'error' };
+        }
       } else {
-        // Add a new item
         const response = await axios.post('http://localhost:5270/api/fooditems', formData, {
-          headers: { Authorization: `Bearer ${this.token}` }
+          headers: {
+            Authorization: `Bearer ${this.token}`
+          }
         });
-        this.foodItems.push(response.data);
-        this.notification = { message: 'Item added successfully', type: 'success' };
+
+        if (response.status === 201) {
+          this.foodItems.push(response.data);
+          this.notification = { message: 'Item added successfully', type: 'success' };
+          this.loadFoodItems(); // Refresh list to show the new item
+        } else {
+          this.notification = { message: `Error adding item: ${response.statusText}`, type: 'error' };
+        }
       }
 
-      // Check if the entered food type is new, and add it to the foodTypes array if it's not already there
-      if (!this.foodTypes.includes(formData.foodType)) {
-        this.foodTypes.push(formData.foodType); // Dynamically add new food type
-      }
-
-      this.loadFoodItems();
       this.resetForm();
       this.showNotification();
     } catch (error) {
       console.error('Error occurred', error);
-      this.notification = { message: 'Unexpected error occurred', type: 'error' };
+      let errorMessage = 'Unexpected error occurred';
+      if (axios.isAxiosError(error)) {
+        if (error.response) {
+          errorMessage = `Error: ${error.response.status} - ${error.response.statusText}`;
+        } else if (error.request) {
+          errorMessage = 'No response received from the server.';
+        } else {
+          errorMessage = `Request error: ${error.message}`;
+        }
+      } else if (error instanceof Error) {
+        errorMessage = `Error: ${error.message}`;
+      }
+      this.notification = { message: errorMessage, type: 'error' };
       this.showNotification();
     }
   }
 
-  // Show the notification for 3 seconds
   showNotification() {
     setTimeout(() => {
       this.notification = null;
     }, 3000);
   }
 
-  // Show delete confirmation modal
   async deleteItem(id: number) {
     this.itemToDelete = id;
     this.showDeleteConfirmation = true;
   }
 
-  // Confirm delete action
   async confirmDelete() {
     if (this.itemToDelete) {
       try {
-        await axios.delete(`http://localhost:5270/api/fooditems/${this.itemToDelete}`, {
-          headers: { Authorization: `Bearer ${this.token}` }
+        const response = await axios.delete(`http://localhost:5270/api/fooditems/${this.itemToDelete}`, {
+          headers: {
+            Authorization: `Bearer ${this.token}`
+          }
         });
-        this.notification = { message: 'Item deleted successfully', type: 'success' };
-        this.loadFoodItems();
-        this.showDeleteConfirmation = false;
-        this.showNotification();
+
+        if (response.status === 204) {
+          this.loadFoodItems();
+          this.itemToDelete = null;
+          this.showDeleteConfirmation = false;
+          this.notification = { message: 'Item deleted successfully', type: 'success' };
+          this.showNotification();
+        } else {
+          this.notification = { message: 'Error deleting item', type: 'error' };
+        }
       } catch (error) {
         console.error('Error deleting food item', error);
         this.notification = { message: 'Error occurred', type: 'error' };
@@ -172,6 +212,11 @@ export class ManageitemsComponent implements OnInit {
     }
   }
 
+  getImageUrl(imgUrl: string): string {
+    return imgUrl;
+  }
+
+  
   cancelDelete() {
     this.itemToDelete = null;
     this.showDeleteConfirmation = false;
@@ -182,12 +227,6 @@ export class ManageitemsComponent implements OnInit {
     this.editingItem = null;
   }
 
-  // Get the image URL (can be adjusted if image is hosted differently)
-  getImageUrl(imgUrl: string): string {
-    return imgUrl;
-  }
-
-  // Navigation methods
   navigateToAdminDash() {
     this.router.navigate(['/admindash']);
   }

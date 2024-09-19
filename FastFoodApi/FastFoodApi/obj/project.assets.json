@@ -4806,19 +4806,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nirmalraj.s\\.nuget\\packages\\": {}
+    "C:\\Users\\Nirmal Raj\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\FastFoodApi.csproj",
+      "projectUniqueName": "C:\\Users\\Nirmal Raj\\Desktop\\Raayan Fast Foods\\FastFoodangdotnetProject-KMN-Raayan-fastfoods\\FastFoodApi\\FastFoodApi\\FastFoodApi.csproj",
       "projectName": "FastFoodApi",
-      "projectPath": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\FastFoodApi.csproj",
-      "packagesPath": "C:\\Users\\nirmalraj.s\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\obj\\",
+      "projectPath": "C:\\Users\\Nirmal Raj\\Desktop\\Raayan Fast Foods\\FastFoodangdotnetProject-KMN-Raayan-fastfoods\\FastFoodApi\\FastFoodApi\\FastFoodApi.csproj",
+      "packagesPath": "C:\\Users\\Nirmal Raj\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nirmal Raj\\Desktop\\Raayan Fast Foods\\FastFoodangdotnetProject-KMN-Raayan-fastfoods\\FastFoodApi\\FastFoodApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nirmalraj.s\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nirmal Raj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4902,7 +4902,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,6 @@
 <div class="navbar">
   <div class="navbar-left">
-    <button class="menu-icon" (click)="toggleMenu()"> 
-      <i class="fas fa-bars"></i>
-    </button>
+    <button class="menu-icon" (click)="toggleMenu()"> <i class="fas fa-bars"></i></button>
     <div class="dropdown-menu" *ngIf="menuVisible">
       <a href="/manageorders">Manage Orders</a>
       <a href="/manageusers">Manage Users</a>
@@ -27,19 +25,17 @@
 
 <div class="mar">
   <div class="manage-items-container">
-    <!-- Navigation bar for food types -->
+    <!-- Side Navbar for food types -->
     <div class="food-type-nav">
-      <button *ngFor="let type of foodTypes" 
-              [class.active]="selectedFoodType === type" 
-              (click)="filterItemsByType(type)" 
-              class="nav-button">
-        {{ type }}
-      </button>
-      <button [class.active]="selectedFoodType === null" 
-              (click)="filterItemsByType(null)" 
-              class="nav-button">
-        Show All
-      </button>
+      <select (change)="onFoodTypeChange($event)" id="foodTypeDropdown">
+        <option *ngFor="let type of foodTypes" [value]="type">{{ type }}</option>
+        <option value="new">Add New Food Type</option>
+      </select>
+      <div *ngIf="isAddingNewType">
+        <input type="text" [(ngModel)]="newFoodType" placeholder="New Food Type" />
+        <button (click)="addFoodType()">Add</button>
+      </div>
+      <button [class.active]="selectedFoodType === null" (click)="filterItemsByType(null)" class="nav-button">Show All</button>
     </div>
 
     <!-- Main content area -->
@@ -88,17 +84,10 @@
           <label for="foodType">Food Type</label>
           <select id="foodType" formControlName="foodType" (change)="onFoodTypeChange($event)">
             <option *ngFor="let type of foodTypes" [value]="type">{{ type }}</option>
-            <option value="new">Add New Food Type</option>
           </select>
-          <div *ngIf="itemForm.get('foodType')?.value === 'new'" class="form-group">
-            <label for="newFoodType">New Food Type</label>
-            <input type="text" id="newFoodType" [(ngModel)]="newFoodType" />
-            <button type="button" (click)="addNewFoodType()" class="add-new-food-type-button">Add Food Type</button>
-          </div>
-          <div class="alert alert-danger" *ngIf="itemForm.get('foodType')?.invalid && (itemForm.get('foodType')?.touched || itemForm.get('foodType')?.dirty)">
-            <small *ngIf="itemForm.get('foodType')?.errors?.['required']">Food Type is required.</small>
-          </div>
         </div>
+        
+        
 
         <div class="form-group">
           <button type="submit" class="save-button" [disabled]="itemForm.invalid">{{ editingItem ? 'Update Item' : 'Add Item' }}</button>
@@ -150,7 +139,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2>Delete Confirmation</h2>
-        <button class="close" (click)="cancelDelete()" aria-label="Close">&times;</button>
+        <button class="close" (click)="cancelDelete()">&times;</button>
       </div>
       <div class="modal-body">
         <p>Are you sure you want to delete this item?</p>
