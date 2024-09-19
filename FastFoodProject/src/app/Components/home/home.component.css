@@ -1,0 +1,330 @@
+/* General resets to avoid unexpected overflow */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders do not affect width */
+}
+
+/* Homepage styles */
+.homepage {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: url('/assets/images/background.jpg') center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+    padding-top: 20px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styles */
+.header {
+    height: 100vh;
+    max-height: 900px;
+    background-size: cover;
+    min-height: 750px;
+    position: relative;
+    top: -20px;
+}
+
+/* Overlay styles */
+.header .overlay {
+    height: 100%;
+    background: rgba(33, 37, 41, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Header title styles */
+.header-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    opacity: .8;
+    color: #343a40;
+}
+
+/* Mini header styles */
+.header-mini {
+    min-height: 24rem;
+    height: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background: #ffa1b4 !important;
+}
+
+/* Section title styles */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 24px 0;
+    margin-left: 46px;
+}
+
+/* Gallery styles */
+/* General resets to avoid unexpected overflow */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and borders do not affect width */
+}
+
+/* Gallery section styles */
+#gallery {
+    padding: 50px 15px; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column; /* Stack title and gallery items vertically */
+    align-items: center; /* Center the gallery container */
+}
+
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Space between images */
+    margin-left: -15px !important;
+}
+
+/* Gallery item styles */
+.gallery-item {
+    position: relative;
+    width: 100%; /* Full width for each item */
+    max-width: 300px; /* Limit maximum width */
+    height: 300px; /* Fixed height for consistency */
+    overflow: hidden; /* Ensure nothing overflows */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Image styles */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    display: block; /* Ensure no extra space around the image */
+}
+
+/* Overlay styles */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-icon {
+    font-size: 24px; /* Adjust icon size if needed */
+    color: #fff;
+}
+
+/* Responsive styles */
+@media (min-width: 576px) {
+    /* For small screens and up (e.g., tablets and above) */
+    .gallery-item {
+        width: calc(50% - 20px); /* 2 items per row with space between */
+    }
+}
+
+@media (min-width: 768px) {
+    /* For medium screens and up (e.g., desktops) */
+    .gallery-item {
+        width: calc(33.333% - 20px); /* 3 items per row with space between */
+    }
+}
+
+@media (min-width: 992px) {
+    /* For larger screens (e.g., large desktops) */
+    .gallery-item {
+        width: calc(25% - 20px); /* 4 items per row with space between */
+    }
+}
+
+/* Card styles */
+.card-group {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(33.333% - 20px); /* Adjust width to ensure it fits within the container */
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Reduced height for consistency */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    font-size: 1rem;
+}
+
+/* Special offers styles */
+#special-offers {
+    padding: 50px;
+}
+
+#special-offers h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#special-offers p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.offers-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.offers-list li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Testimonial card styles */
+.testmonial-card {
+    position: relative;
+    text-align: center;
+}
+
+.testmonial-card .testmonial-title {
+    font-size: 1.85rem;
+}
+
+.testmonial-card .testmonial-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.testmonial-card .testmonial-body {
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #495057;
+    border-top-color: #ff214f;
+    border-radius: 0.2rem;
+    margin-top: 30px;
+}
+
+.testmonial-card .testmonial-body:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-color: #ff214f;
+    border-radius: 0.2rem 0 0 0;
+    border-style: solid;
+    border-width: 2px 0 0 2px;
+    transform: rotate(45deg) translateX(-50%);
+    background: #343a40;
+}
+
+/* Product card styles */
+.product-card {
+    text-align: center;
+}
+
+.product-img {
+    width: 100%;
+    height: 150px; /* Reduced height for consistency */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Marquee styles */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content img {
+    border-radius: 8px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, 0); 
+    }
+}
+
+/* Container and row styles */
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: -35px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 60px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-map {
+        margin-right: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+.btn
+{
+    padding: 20px;
+    font-size: 20px;
+}

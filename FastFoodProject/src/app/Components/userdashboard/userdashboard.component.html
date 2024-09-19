@@ -1,0 +1,129 @@
+<header class="header">
+  <button class="menu-button" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i> <!-- Menu icon -->
+  </button>
+  <h1><img class="logo" src="/assets/images/logo.JPG"></h1>
+  <div class="button-group">
+    <button class="show-profile-button" (click)="showProfile()">
+      <i class="fas fa-user"></i> <!-- Show Profile icon -->
+    </button>
+    <button class="view-cart-button" (click)="goToCart()">
+      <i class="fas fa-shopping-cart"></i> <!-- View Cart icon -->
+    </button>
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+    </button>
+  </div>
+</header>
+<div class="mar">
+  <div class="dashboard-container">
+    <div class="main-content">
+      <div class="sidebar" *ngIf="showMenu">
+        <nav class="nav-menu">
+          <ul class="categ">
+            <li>
+              <a (click)="filterItemsByType(null)" class="nav-button">Show All</a>
+            </li>
+            <li *ngFor="let type of foodTypes">
+              <a (click)="filterItemsByType(type)">{{ type }}</a>
+            </li>
+            <li>
+              <a (click)="goToOrders()">My Orders</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="card-container">
+          <div class="card bg-dark text-white" *ngFor="let item of filteredItems">
+            <img [src]="getImageUrl(item.imgUrl)" class="card-img-top" [alt]="item.name">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">{{ item.description }}</p>
+              <p class="card-text">${{ item.price.toFixed(2) }}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary add-to-cart-button" (click)="addToCart(item)">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+              <button class="btn btn-success order-now-button" (click)="openOrderModal(item)">
+                <i class="fas fa-check"></i> Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Item Added to Cart Notification -->
+<div class="notification" *ngIf="isNotificationVisible">
+  <div class="notification-content">
+    <p>{{ notificationMessage }}</p>
+  </div>
+</div>
+
+<!-- Order Confirmation Modal -->
+<div class="modal" [ngClass]="{'show': isModalVisible}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Order</h5>
+        <button type="button" class="close" (click)="cancelPayment()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to order {{ selectedItem?.name }}?</p>
+        <p>Total Price: ${{ selectedItem?.price }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelPayment()">No</button>
+        <button type="button" class="btn btn-primary" (click)="proceedToPayment()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal" [ngClass]="{'show': isLogoutModalVisible}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Logout</h5>
+        <button type="button" class="close" (click)="cancelLogout()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to log out?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelLogout()">No</button>
+        <button type="button" class="btn btn-primary" (click)="confirmLogout()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Welcome Modal -->
+<div class="modal" [ngClass]="{'show': isWelcomeModalVisible}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Welcome, {{ userName }}!</h5>
+        <button type="button" class="close" (click)="closeWelcomeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>We're glad to have you back. Enjoy your time exploring our food items!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="closeWelcomeModal()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

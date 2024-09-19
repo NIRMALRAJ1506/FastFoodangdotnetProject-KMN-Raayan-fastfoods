@@ -1,0 +1,107 @@
+<app-navbar></app-navbar>
+<div class="mar">
+  <h1 class="page-heading">Sign Up</h1>
+
+  <div class="signup-container">
+    <div class="icon-container">
+      <i class="fas fa-user-plus fa-3x"></i> <!-- Example icon -->
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="form-group">
+        <label class="text-color" for="name">Name</label>
+        <input id="name" formControlName="name" type="text" class="form-control" placeholder="Name" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+          <!-- Required Field Validation -->
+          <div *ngIf="signupForm.get('name')?.errors?.['required']">This field is required</div>
+        
+          <!-- Pattern Validation: Ensures only letters and one space between words -->
+          <div *ngIf="signupForm.get('name')?.errors?.['pattern']">
+            Name must contain only letters with a single space between words.
+          </div>
+        
+          <!-- Min Length Validation -->
+          <div *ngIf="signupForm.get('name')?.errors?.['minlength']">
+            Name must be at least 4 characters long.
+          </div>
+        
+          <!-- Max Length Validation -->
+          <div *ngIf="signupForm.get('name')?.errors?.['maxlength']">
+            Name must not exceed 20 characters.
+          </div>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="dob">Date of Birth</label>
+        <input id="dob" formControlName="dob" type="date" class="form-control" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('dob')?.touched && signupForm.get('dob')?.invalid">
+          <div *ngIf="signupForm.get('dob')?.errors?.['required']">This field is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="contactNumber">Contact Number</label>
+        <input id="contactNumber" formControlName="contactNumber" type="text" class="form-control" placeholder="Contact Number" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('contactNumber')?.touched && signupForm.get('contactNumber')?.invalid">
+          <div *ngIf="signupForm.get('contactNumber')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('contactNumber')?.errors?.['pattern']">Contact number must be 10 digits long</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="address">Address</label>
+        <input id="address" formControlName="address" type="text" class="form-control" placeholder="address" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('address')?.touched && signupForm.get('address')?.invalid">
+          <div *ngIf="signupForm.get('address')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('address')?.errors?.['pattern']">Address must be 4-50 characters long and can contain letters, numbers, and dot,slash,comma</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="username">Username</label>
+        <input id="username" formControlName="username" type="text" class="form-control" placeholder="Username" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
+          <div *ngIf="signupForm.get('username')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('username')?.errors?.['pattern']">Username must be 4-15 characters long and can contain letters, numbers, and underscores</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="email">Email</label>
+        <input id="email" formControlName="email" type="email" class="form-control" placeholder="Email" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+          <div *ngIf="signupForm.get('email')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('email')?.errors?.['pattern']">Please enter a valid email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="text-color" for="password">Password</label>
+        <input id="password" formControlName="password" type="password" class="form-control" placeholder="Password" />
+        <div class="alert alert-danger" *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+          <div *ngIf="signupForm.get('password')?.errors?.['required']">This field is required</div>
+          <div *ngIf="signupForm.get('password')?.errors?.['pattern']">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Sign Up</button>
+      <div class="login-link">
+        <span>Already have an account?</span> <a routerLink="/login">Click here to login</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal for success message -->
+<div id="successModal" class="modal" [ngClass]="{ 'show': isModalVisible }">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h4 class="modal-title">Success</h4>
+    </div>
+    <div class="modal-body">
+      <p>{{ successMessage }}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="closeModal()">OK</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>

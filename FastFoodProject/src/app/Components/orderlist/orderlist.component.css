@@ -1,0 +1,256 @@
+/* Ensure the background image covers the entire page */
+.mar {
+  background: url('/assets/images/background.jpg') center center no-repeat;
+  background-size: cover; /* Cover the entire container */
+  min-height: 100vh; /* Ensure it covers at least the viewport height */
+  background-attachment: fixed; /* Keep background fixed on scroll */
+  color: white;
+  padding: 80px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.header .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-button, .logout-button, .show-profile-button, .view-cart-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.menu-button:hover, .logout-button:hover, .show-profile-button:hover, .view-cart-button:hover {
+  background-color: #0056b3;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Adjustments to ensure space between header and cards */
+.manage-users-container {
+  margin-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.order-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.order-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.order-info p {
+  margin: 0;
+  padding: 5px 0;
+  color: black;
+}
+
+.order-info p strong {
+  display: inline-block;
+  width: 150px;
+}
+
+.order-status-pending {
+  color: red;
+}
+
+.order-status-confirmed {
+  color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header .button-group {
+    gap: 8px;
+  }
+
+  .menu-button, .logout-button, .show-profile-button, .view-cart-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .order-card {
+    padding: 12px;
+    margin-bottom: 18px;
+  }
+
+  .order-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .order-info p strong {
+    width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+
+  .menu-button, .logout-button, .show-profile-button, .view-cart-button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .order-card {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .order-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .order-info p strong {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 8px;
+  }
+
+  .menu-button, .logout-button, .show-profile-button, .view-cart-button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .order-card {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .order-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .order-info p strong {
+    width: 100px;
+  }
+
+  .home-icon-container {
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    padding: 8px;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.5);
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-dialog {
+  position: relative;
+  width: 90%;
+  margin: 10px;
+  max-width: 500px;
+  margin: 1.75rem auto;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .3rem;
+  box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+  outline: 0;
+}
+
+.modal-header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.close {
+  background: none;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-footer {
+  padding: 10px;
+  text-align: right;
+}

@@ -1,0 +1,113 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Ensure body layout is column-oriented */
+}
+
+.menu-header {
+  margin-top: 44px;
+  color: white; /* Ensure text color is white for readability */
+}
+
+.mar {
+  background: url("/assets/images/background.jpg") no-repeat center center fixed;
+  background-size: cover; /* Ensure background covers the entire element */
+  flex: 1; /* Allow .mar to expand and fill available space */
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center container */
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.btn {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  /* Ensure footer is positioned at the bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .menu-header {
+    font-size: 1.5rem; /* Adjust font size for medium screens */
+  }
+  .card-img-top {
+    height: 150px; /* Adjust image height for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-header {
+    font-size: 1.25rem; /* Adjust font size for small screens */
+  }
+  .card-img-top {
+    height: 120px; /* Adjust image height for small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-header {
+    font-size: 1rem; /* Adjust font size for extra small screens */
+  }
+  .card-img-top {
+    height: 100px; /* Adjust image height for extra small screens */
+  }
+  .card-body {
+    padding: 10px; /* Reduce padding for extra small screens */
+  }
+}

@@ -1,0 +1,198 @@
+/* General Page Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Ensure the main content stays between the navbar and footer */
+.mar {
+  background: url("/assets/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+  min-height: calc(100vh - 160px); /* Adjust based on navbar and footer height */
+  padding-top: 80px; /* Add space to avoid hiding behind navbar */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center; /* Center everything horizontally */
+}
+
+.page-heading {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 32px; /* Increased font size */
+  font-weight: bold; /* Make it bolder for emphasis */
+  width: 100%;
+  margin-top: 30px;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon-container i {
+  color: #007bff; /* Changed icon color to blue */
+  font-size: 48px; /* Adjust size if needed */
+}
+
+/* Form Styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Full width form */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  color: #fff;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+}
+
+.alert {
+  color: #dc3545;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0056b3;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #007bff;
+}
+
+.login-link a:hover, .login-link a:focus {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+  
+  .page-heading {
+    font-size: 28px; /* Slightly smaller on smaller screens */
+  }
+  
+  .form-control {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-heading {
+    font-size: 24px; /* Smaller font size for mobile */
+  }
+  
+  .form-control {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal.show {
+  display: block; /* Show the modal */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Center the modal vertically with margin */
+  padding: 20px; /* Increased padding for better spacing */
+  border: 1px solid #888;
+  width: 300px; /* Set a smaller width */
+  border-radius: 8px; /* Optional: rounded corners for the modal */
+  position: relative; /* For positioning the close button */
+}
+
+.modal-header {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center; /* Center align text in the header */
+}
+
+.modal-footer {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px; /* Smaller font size for the close button */
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; /* Position close button relative to modal-content */
+  top: 10px; /* Distance from top */
+  right: 10px; /* Distance from right */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}

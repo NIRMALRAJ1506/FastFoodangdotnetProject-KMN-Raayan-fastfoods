@@ -1,0 +1,94 @@
+/* Carousel Container */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Carousel */
+  .carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+  }
+  
+  /* Carousel Inner */
+  .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Carousel Item */
+  .carousel-item {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Carousel Image */
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  
+  /* Carousel Caption */
+  .carousel-caption {
+    position: absolute;
+    bottom: 30px; /* Increased bottom padding to ensure it’s not too close to the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    color: #f4f4f4;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    border-radius: 10px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (min-width: 1024px) {
+    .carousel-item {
+      height: 60vh; /* Height is 60% of the viewport height on large screens */
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-item {
+      height: 50vh; /* Height is 50% of the viewport height on medium screens */
+    }
+  
+    .carousel-caption {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .carousel {
+      max-width: 100%;
+    }
+  
+    .carousel-item {
+      height: 40vh; /* Height is 40% of the viewport height on small screens */
+    }
+  
+    .carousel-caption {
+      font-size: 1em;
+      padding: 8px 0;
+    }
+  }
+  
+  /* Additional Space for Footer */
+  #carousel {
+    margin-bottom: 80px; /* Adjust this value as needed */
+  }
+  

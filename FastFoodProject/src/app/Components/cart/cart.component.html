@@ -1,0 +1,94 @@
+<div class="cart-page">
+  <!-- Header -->
+  <header class="header">
+    <button class="menu-button" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i> <!-- Menu icon -->
+    </button>
+    <h1><img class="logo" src="/assets/images/logo.JPG" alt="Logo"></h1>
+    <div class="button-group">
+      <button class="show-profile-button" (click)="showProfile()">
+        <i class="fas fa-user"></i> <!-- Show Profile icon -->
+      </button>
+      <button class="logout-button" (click)="showLogoutConfirmation()">
+        <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar" [class.open]="showSidebar">
+    <nav class="nav-menu">
+      <ul>
+        <li>
+          <a (click)="navigateToHome()">Home</a>
+        </li>
+        <li>
+          <a (click)="goToOrders()">My Orders</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="mar">
+    <div class="main-content">
+      <div class="cart-container">
+        <h2>Your Cart</h2>
+        <div *ngIf="cartItems.length === 0">
+          <p>Your cart is empty.</p>
+        </div>
+        <div *ngIf="cartItems.length > 0">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cartItems">
+                <td><img [src]="getImageUrl(item.imgUrl)" alt="{{ item.name }}" class="cart-image"></td>
+                <td>{{ item.name }}</td>
+                <td>${{ item.price.toFixed(2) }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ (item.price * item.quantity).toFixed(2) }}</td>
+                <td>
+                  <button class="remove" (click)="removeFromCart(item.id)">Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cart-summary">
+            <h3>Total Price: ${{ totalPrice.toFixed(2) }}</h3>
+            <button class="checkout" (click)="proceedToCheckout()">Proceed to Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div class="modal" [ngClass]="{'show': showLogoutModal}" (click)="closeLogoutModal()">
+    <div class="modal-dialog" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Confirm Logout</h2>
+          <button class="close" (click)="closeLogoutModal()">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to log out?</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary" (click)="confirmLogout()">Yes</button>
+          <button class="btn-secondary" (click)="closeLogoutModal()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

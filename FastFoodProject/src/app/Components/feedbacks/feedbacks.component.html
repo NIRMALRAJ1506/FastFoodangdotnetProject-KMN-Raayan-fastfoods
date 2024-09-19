@@ -1,0 +1,57 @@
+<div class="navbar">
+  <div class="navbar-left">
+    <button class="menu-icon" (click)="toggleMenu()"> <i class="fas fa-bars"></i></button>
+    <div class="dropdown-menu" *ngIf="menuVisible">
+      <a href="/manageorders">Manage Orders</a>
+      <a href="/manageitems">Manage Items</a>
+      <a href="/manageusers">Manage Users</a>
+    </div>
+  </div>
+  <div class="navbar-center">
+    <img src="/assets/images/logo.JPG" alt="Logo" class="logo" />
+  </div>
+  <div class="navbar-right">
+    <a href="/admindash" class="icon home-icon"><i class="fas fa-home"></i></a>
+    <a class="icon logout-icon" (click)="openLogoutModal()">
+      <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+    </a>
+  </div>
+</div>
+<div class="mar">
+<div class="feedback-table-container">
+    <h2 style="color:white;text-align: center;">Submitted Feedbacks</h2>
+    <table class="feedback-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Feedback</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feedback of feedbacks">
+          <td>{{ feedback.name }}</td>
+          <td>{{ feedback.email }}</td>
+          <td>{{ feedback.feedbackText }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal" *ngIf="showLogoutModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Logout Confirmation</h2>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to log out?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)="confirmLogout()">Yes</button>
+        <button class="btn btn-secondary" (click)="closeLogoutModal()">No</button>
+      </div>
+    </div>
+  </div>
+</div>

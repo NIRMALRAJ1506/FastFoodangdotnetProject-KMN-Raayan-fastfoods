@@ -1,0 +1,154 @@
+<div class="mar">
+  <div class="dashboard-container">
+    <header class="header">
+      <button class="menu-button" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i> <!-- Menu icon -->
+      </button>
+      <h1><img class="logo" src="/assets/images/logo.JPG"></h1>
+      <div class="button-group">
+        <button class="show-profile-button" (click)="showProfile()">
+          <i class="fas fa-user"></i> <!-- Show Profile icon -->
+        </button>
+        <button class="view-cart-button" (click)="goToCart()">
+          <i class="fas fa-shopping-cart"></i> <!-- View Cart icon -->
+        </button>
+        <button class="logout-button" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+        </button>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <!-- Sidebar -->
+      <div class="sidebar" [ngClass]="{'open': showMenu}">
+        <nav class="nav-menu">
+          <ul>
+            <li>
+              <a (click)="goToHome()">Home</a>
+            </li>
+            <li>
+              <a (click)="goToOrders()">My Orders</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- User Profile -->
+      <div class="user-profile-container">
+        <div class="profile-box">
+          <h2 class="dashboard-heading">User Profile</h2>
+
+          <!-- Notification -->
+          <div *ngIf="updateNotification" class="notification">
+            {{ updateNotification }}
+          </div>
+
+          <!-- Profile Form -->
+          <form *ngIf="!isEditing && userDetails">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input id="name" [value]="userDetails.name" readonly />
+            </div>
+            <div class="form-group">
+              <label for="contactNo">Contact Number:</label>
+              <input id="contactNo" [value]="userDetails.contactNo" readonly />
+            </div>
+            <div class="form-group">
+              <label for="contactNo">Address:</label>
+              <input id="contactNo" [value]="userDetails.address" readonly />
+            </div>
+            <div class="form-group">
+              <label for="dob">Date of Birth:</label>
+              <input id="dob" [value]="userDetails.dob | date:'yyyy-MM-dd'" readonly />
+            </div>
+            <div class="form-group">
+              <label for="email">Email ID:</label>
+              <input id="email" [value]="userDetails.email" readonly />
+            </div>
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input id="username" [value]="userDetails.username" readonly />
+            </div>
+
+            <button type="button" (click)="editProfile()">Edit</button>
+            <button type="button" (click)="deleteProfile()">Delete</button>
+          </form>
+
+          <!-- Edit Form -->
+          <div *ngIf="isEditing" class="edit-form">
+            <form (ngSubmit)="updateProfile()">
+              <div class="form-group">
+                <label for="editName">Name:</label>
+                <input id="editName" [(ngModel)]="userDetails.name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="editContactNo">Contact Number:</label>
+                <input id="editContactNo" [(ngModel)]="userDetails.contactNo" name="contactNo" required />
+              </div>
+              <div class="form-group">
+                <label for="editaddress">Address</label>
+                <input id="editaddress" [(ngModel)]="userDetails.address" name="address" required />
+              </div>
+              <div class="form-group">
+                <label for="editDob">Date of Birth:</label>
+                <input id="editDob" [(ngModel)]="userDetails.dob" name="dob" type="date" required />
+              </div>
+              <div class="form-group">
+                <label for="editEmail">Email ID:</label>
+                <input id="editEmail" [(ngModel)]="userDetails.email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="editUsername">Username:</label>
+                <input id="editUsername" [(ngModel)]="userDetails.username" name="username" required />
+              </div>
+              <button type="submit">Save</button>
+              <button type="button" (click)="cancelEdit()">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal" [ngClass]="{'show': isDeleteModalVisible}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Deletion</h5>
+        <button type="button" class="close" (click)="cancelDelete()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete your account?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelDelete()">No</button>
+        <button type="button" class="btn btn-primary" (click)="confirmDelete()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Logout Confirmation Modal -->
+<div class="modal" [ngClass]="{'show': isLogoutModalVisible}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Logout</h5>
+        <button type="button" class="close" (click)="cancelLogout()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to logout?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelLogout()">No</button>
+        <button type="button" class="btn btn-primary" (click)="confirmLogout()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

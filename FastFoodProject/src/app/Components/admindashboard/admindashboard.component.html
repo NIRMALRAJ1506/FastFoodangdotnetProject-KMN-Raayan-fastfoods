@@ -1,0 +1,85 @@
+<header class="header">
+  <button class="menu-button" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i> <!-- Menu icon -->
+  </button>
+  <h1><img class="logo" src="/assets/images/logo.JPG"></h1>
+  <button class="logout-button" (click)="openLogoutModal()">
+    <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+  </button>
+</header>
+
+<div class="mar">
+  <div class="dashboard-container">
+    <div class="main-content">
+      <div class="sidebar" *ngIf="showMenu">
+        <nav class="nav-menu">
+          <ul>
+            <li *ngFor="let item of fastFoodItems">
+              <a [routerLink]="item.link">{{ item.name }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="content">
+        <!-- Statistics Section -->
+        <div class="statistics">
+          <div class="stat-box">
+            <h3>Total Items</h3>
+            <p>{{ totalItems }}</p>
+          </div>
+          <div class="stat-box">
+            <h3>Total Users</h3>
+            <p>{{ totalUsers }}</p>
+          </div>
+          <div class="stat-box">
+            <h3>Total Orders</h3>
+            <p>{{ totalOrders }}</p>
+          </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-container">
+          <canvas id="userChart"></canvas>
+        </div>
+
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div class="modal" *ngIf="showWelcomeModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Welcome, {{ userName }}!</h2>
+          </div>
+          <div class="modal-body">
+            <p>We're glad to have you back.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" (click)="closeWelcomeModal()">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal" *ngIf="showLogoutModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Logout Confirmation</h2>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to log out?</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" (click)="confirmLogout()">Yes</button>
+            <button class="btn btn-secondary" (click)="closeLogoutModal()">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

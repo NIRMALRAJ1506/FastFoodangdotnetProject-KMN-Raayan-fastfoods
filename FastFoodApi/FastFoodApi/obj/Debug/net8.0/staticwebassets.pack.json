@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\wwwroot\\Images\\chickenpizza.jfif",
+      "PackagePath": "staticwebassets\\Images\\chickenpizza.jfif"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FastFoodApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FastFoodApi.props",
+      "PackagePath": "build\\FastFoodApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FastFoodApi.props",
+      "PackagePath": "buildMultiTargeting\\FastFoodApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FastFoodApi.props",
+      "PackagePath": "buildTransitive\\FastFoodApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

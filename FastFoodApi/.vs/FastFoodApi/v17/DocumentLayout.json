@@ -1,0 +1,284 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\controllers\\fooditemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\foodtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\foodtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FastFood/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FastFood/True/SqlTable/dbo.Orders.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FastFood/True/SqlTable/dbo.OrderItems.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\resetpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\resetpasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\foodcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\foodcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|c:\\users\\nirmalraj.s\\desktop\\project-raayan fast foods\\fastfoodangdotnetproject-kmn\\fastfoodapi\\fastfoodapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{601F9054-2D20-42B6-8D6E-AD18342150B5}|FastFoodApi\\FastFoodApi.csproj|solutionrelative:fastfoodapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FoodTypeDto.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\FoodTypeDto.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\FoodTypeDto.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\FoodTypeDto.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\FoodTypeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T13:25:36.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\OrderModel.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\OrderModel.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\OrderModel.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\OrderModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T05:39:33.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FastFood/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-19T04:54:55.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "FastFoodApi\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAswJcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T10:18:16.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FoodItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\FoodItemsController.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Controllers\\FoodItemsController.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\FoodItemsController.cs",
+              "RelativeToolTip": "FastFoodApi\\Controllers\\FoodItemsController.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAAAJgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T10:31:33.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.OrderItems [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FastFood/True/SqlTable/dbo.OrderItems.sql",
+              "ToolTip": "dbo.OrderItems [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-19T05:43:00.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.Orders [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/FastFood/True/SqlTable/dbo.Orders.sql",
+              "ToolTip": "dbo.Orders [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-19T05:43:09.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\LoginModel.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T05:11:54.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\AppUser.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T04:40:53.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "FastFoodApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAcwGwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T17:33:48.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\RegisterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T05:05:49.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Program.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Program.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Program.cs",
+              "RelativeToolTip": "FastFoodApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T10:02:31.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ResetPasswordModel.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\ResetPasswordModel.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\ResetPasswordModel.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\ResetPasswordModel.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\ResetPasswordModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T17:40:14.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "FastFoodApi\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAqwEEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T17:36:39.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FoodContext.cs",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\FoodContext.cs",
+              "RelativeDocumentMoniker": "FastFoodApi\\Models\\FoodContext.cs",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\Models\\FoodContext.cs",
+              "RelativeToolTip": "FastFoodApi\\Models\\FoodContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T05:13:39.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\appsettings.json",
+              "RelativeDocumentMoniker": "FastFoodApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\nirmalraj.s\\Desktop\\Project-Raayan Fast Foods\\FastFoodangdotnetProject-KMN\\FastFoodApi\\FastFoodApi\\appsettings.json",
+              "RelativeToolTip": "FastFoodApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-10T10:01:04.715Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

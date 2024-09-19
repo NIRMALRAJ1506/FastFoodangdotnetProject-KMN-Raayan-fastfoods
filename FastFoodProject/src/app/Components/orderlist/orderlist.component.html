@@ -1,0 +1,113 @@
+<header class="header">
+  <h1><img class="logo" src="/assets/images/logo.JPG"></h1>
+  <div class="button-group">
+    <div class="show-profile-button">
+      <i class="fas fa-home" (click)="goToHome()"></i>
+    </div>
+    <button class="show-profile-button" (click)="showProfile()">
+      <i class="fas fa-user"></i> <!-- Show Profile icon -->
+    </button>
+    <button class="view-cart-button" (click)="goToCart()">
+      <i class="fas fa-shopping-cart"></i> <!-- View Cart icon -->
+    </button>
+    <button class="logout-button" (click)="showLogoutModal()">
+      <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+    </button>
+  </div>
+</header>
+<div class="mar">
+  <div class="orders-container">
+    <h2>Your Orders</h2>
+    <!-- Home icon in the top right corner -->
+
+    <div *ngIf="userOrders.length > 0; else noOrders">
+      <div *ngFor="let order of userOrders" class="order-card">
+        <div class="order-header">
+          <div *ngFor="let item of order.orderItems" class="order-item">
+            <img [src]="item.imgUrl || 'default-image-url.jpg'" alt="{{ item.name }}" class="order-image" />
+            <div class="order-info">
+              <p><strong>Item Name:</strong> {{ item.name }}</p>
+              <p><strong>Order Number:</strong> {{ order.orderNumber }}</p>
+              <p><strong>Total Price:</strong> ${{ order.totalPrice }}</p>
+              <p><strong>Order Time:</strong> {{ order.orderTime | date: 'short' }}</p>
+              <p><strong>Status:</strong> 
+                <span [ngClass]="{
+                  'order-status-pending': order.status === 'Pending',
+                  'order-status-confirmed': order.status === 'Confirmed'
+                }">{{ order.status }}</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Button to download the bill -->
+          <button *ngIf="order.status === 'Confirmed'" (click)="downloadBill(order.id)" class="btn btn-primary">
+            Download Bill
+          </button>
+
+          <!-- Button to cancel the order -->
+          <button *ngIf="order.status === 'Pending'" (click)="cancelOrder(order.id)" class="btn btn-danger">
+            Cancel Order
+          </button>
+        </div>
+
+        <!-- Bill content to be captured for PDF -->
+        <!-- <div id="bill-content-{{order.id}}" class="bill-content">
+          <h2>Order Confirmation</h2>
+          <p><strong>Order Number:</strong> {{ order.orderNumber }}</p>
+          <p><strong>Total Price:</strong> ${{ order.totalPrice }}</p>
+          <p><strong>Order Time:</strong> {{ order.orderTime | date: 'short' }}</p>
+          <p><strong>Status:</strong> {{ order.status }}</p>
+
+          <h3>Items Ordered</h3>
+          <div *ngFor="let item of order.orderItems">
+            <p><strong>Item Name:</strong> {{ item.name }}</p>
+            <p><strong>Price:</strong> ${{ item.price }}</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <ng-template #noOrders>
+      <p>You have no orders yet.</p>
+    </ng-template>
+  </div>
+</div>
+<div class="modal" [ngClass]="{'show': isLogoutModalVisible}" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Logout</h5>
+        <button type="button" class="close" (click)="cancelLogout()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to logout?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelLogout()">No</button>
+        <button type="button" class="btn btn-primary" (click)="confirmLogout()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Order Cancel Confirmation Modal -->
+<div class="modal" [ngClass]="{'show': isCancelModalVisible}" (click)="cancelCancelModal()">
+  <div class="modal-dialog" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Order Cancellation</h5>
+        <button type="button" class="close" (click)="cancelCancelModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to cancel this order?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelCancelModal()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="confirmCancelOrder()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,67 @@
+<div class="payment-container">
+  <h2>Enter Payment Details</h2>
+
+  <form (ngSubmit)="payNow()" #paymentForm="ngForm">
+    <div class="form-group">
+      <label for="cardNumber">Card Number</label>
+      <input
+        type="text"
+        id="cardNumber"
+        class="form-control"
+        required
+        [(ngModel)]="paymentDetails.cardNumber"
+        name="cardNumber"
+        pattern="[0-9]{16}"
+        placeholder="Enter 16-digit card number"
+        #cardNumber="ngModel"
+      />
+      <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="text-danger">
+        <div *ngIf="cardNumber.errors?.['required']">Card number is required.</div>
+        <div *ngIf="cardNumber.errors?.['pattern']">Card number must be 16 digits.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="expiryDate">Expiry Date</label>
+      <input
+        type="text"
+        id="expiryDate"
+        class="form-control"
+        required
+        [(ngModel)]="paymentDetails.expiryDate"
+        name="expiryDate"
+        placeholder="MM/YY"
+        #expiryDate="ngModel"
+      />
+      <div *ngIf="expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)" class="text-danger">
+        <div *ngIf="expiryDate.errors?.['required']">Expiry date is required.</div>
+        <div *ngIf="expiryDate.errors?.['pattern']">Expiry date must be in MM/YY format.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cvv">CVV</label>
+      <input
+        type="text"
+        id="cvv"
+        class="form-control"
+        required
+        [(ngModel)]="paymentDetails.cvv"
+        name="cvv"
+        pattern="[0-9]{3}"
+        placeholder="Enter 3-digit CVV"
+        #cvv="ngModel"
+      />
+      <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="text-danger">
+        <div *ngIf="cvv.errors?.['required']">CVV is required.</div>
+        <div *ngIf="cvv.errors?.['pattern']">CVV must be 3 digits.</div>
+      </div>
+    </div>
+
+    <button (click)="payNow()" [disabled]="isProcessing" class="btn btn-primary">
+      Pay Now
+    </button>
+    
+    <button type="button" class="btn btn-secondary" (click)="cancelPayment()">Cancel</button>
+  </form>
+</div>

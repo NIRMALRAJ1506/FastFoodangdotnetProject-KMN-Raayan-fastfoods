@@ -1,0 +1,236 @@
+/* Feedback Table */
+.feedback-table-container {
+  max-width: 1000px; /* Adjust the container width as needed */
+  margin: 40px auto;
+}
+
+.feedback-table {
+  width: 900px; /* Fixed width in pixels */
+  border-collapse: collapse;
+}
+
+.feedback-table th,
+.feedback-table td {
+  border: 1px solid #ddd;
+  padding: 12px; /* Match padding to orders table */
+  text-align: left;
+}
+
+.feedback-table th {
+  background-color: #007bff;
+  color: white; /* Ensure text color is white for headers */
+}
+
+.feedback-table td {
+  background-color: #fff;
+  color: black; /* Ensure text color is black for data cells */
+}
+
+/* Background and Layout Adjustments */
+.mar {
+  background: url('/assets/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh; /* Ensure background covers full height minus navbar height */
+  padding-top: 60px; /* Ensure padding-top matches navbar height to avoid overlap */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Position it at the top of the page */
+  left: 0;
+  width: 100%; /* Ensure navbar spans the full width */
+  z-index: 1000; /* Ensure navbar stays above other content */
+  height: 60px; /* Set a fixed height for the navbar */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: #444;
+  position: absolute;
+  top: 60px; /* Position dropdown below navbar */
+  left: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+.dropdown-menu a:hover {
+  background-color: #555;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.home-icon:hover,
+.logout-icon:hover {
+  color: #ccc;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  max-height: 50px; /* Adjust max-height for logo size */
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-dialog {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-header h2 {
+  margin: 0 0 20px;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive Styles */
+
+/* Mobile screens (up to 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+
+  .navbar-left, .navbar-right {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar-center {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    font-size: 20px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    background-color: #444;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-us-container,
+  .feedback-table-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .feedback-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .feedback-table th, .feedback-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .modal-dialog {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

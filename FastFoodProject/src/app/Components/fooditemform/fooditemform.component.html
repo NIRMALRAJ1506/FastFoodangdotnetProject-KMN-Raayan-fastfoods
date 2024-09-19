@@ -1,0 +1,24 @@
+<div class="food-item-form-container">
+  <form [formGroup]="foodItemForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" formControlName="price" type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="imageName">Image</label>
+      <select id="imageName" formControlName="imageName" class="form-control">
+        <option *ngFor="let img of imageNames" [value]="img">{{ img }}</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

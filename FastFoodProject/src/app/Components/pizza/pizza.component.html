@@ -1,0 +1,18 @@
+<div class="pizza-container">
+  <button (click)="navigateToAddFoodItem()" class="btn btn-primary mb-3">Add Pizza Item</button>
+
+  <div class="pizza-items-list">
+    <div class="card" *ngFor="let item of pizzaItems">
+      <!-- Use getImageUrl to get the image URL -->
+      <img [src]="getImageUrl(item.imageName)" alt="{{ item.name }}" class="card-img-top"/>
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text">{{ item.description }}</p>
+        <p class="card-text">Price: ${{ item.price.toFixed(2) }}</p>
+        <p class="card-text">Type: {{ item.foodType }}</p>
+        <button (click)="navigateToUpdateFoodItem(item.id)" class="btn btn-warning">Update</button>
+        <button (click)="deleteFoodItem(item.id)" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

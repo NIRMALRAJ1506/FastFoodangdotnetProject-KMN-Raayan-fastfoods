@@ -1,0 +1,87 @@
+.mar {
+    background: url('/assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    padding-top: 20px;
+    color: white;
+}
+    
+.contact-us-container {
+    margin-top: 60px; /* Adjust the value as needed */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent background for contrast */
+    color: white;
+    margin-top: 90px;
+}
+    
+.contact-us-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+    
+.form-group {
+    margin-bottom: 15px;
+}
+    
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: black;
+}
+    
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Notification style */
+.notification {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50; /* Green background for success message */
+    color: white; /* White text */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's on top of other content */
+    font-size: 16px; /* Adjusting font size */
+}
+
+/* Adding media query for responsiveness */
+@media (max-width: 768px) {
+    .contact-us-container {
+        width: 90%;
+        margin-top: 90px;
+    }
+
+    .btn {
+        padding: 12px;
+    }
+
+    .form-control {
+        padding: 12px;
+    }
+
+    .notification {
+        width: 80%;
+    }
+}

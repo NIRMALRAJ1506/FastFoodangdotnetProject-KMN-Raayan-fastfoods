@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="mar">
+  <div class="contact-us-container">
+    <h1>Feedback</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" formControlName="name" type="text" class="form-control" [ngClass]="{'is-invalid': contactForm.get('name')?.invalid && contactForm.get('name')?.touched}" />
+        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="invalid-feedback">
+          <small *ngIf="contactForm.get('name')?.errors?.['required']">Name is required.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" class="form-control" [ngClass]="{'is-invalid': contactForm.get('email')?.invalid && contactForm.get('email')?.touched}" />
+        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid-feedback">
+          <small *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email address.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="feedbacktext">Feedback</label>
+        <textarea id="feedbacktext" formControlName="feedbacktext" class="form-control" rows="4" [ngClass]="{'is-invalid': contactForm.get('feedbacktext')?.invalid && contactForm.get('feedbacktext')?.touched}"></textarea>
+        <div *ngIf="contactForm.get('feedbacktext')?.invalid && contactForm.get('feedbacktext')?.touched" class="invalid-feedback">
+          <small *ngIf="contactForm.get('feedbacktext')?.errors?.['required']">Feedback is required.</small>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send</button>
+    </form>
+
+    <!-- Notification for successful feedback submission -->
+    <div class="notification" *ngIf="showNotification">
+      <p>Thank you for your valuable feedback!</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
